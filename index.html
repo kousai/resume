@@ -1,29 +1,266 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>iview example</title>
-    <link rel="stylesheet" type="text/css" href="http://unpkg.com/iview/dist/styles/iview.css">
-    <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
-    <script type="text/javascript" src="http://unpkg.com/iview/dist/iview.min.js"></script>
-</head>
-<body>
-<div id="app">
-    <i-button @click="show">Click me!</i-button>
-    <Modal v-model="visible" title="Welcome">Welcome to iView</Modal>
-</div>
-<script>
-    new Vue({
-        el: '#app',
-        data: {
-            visible: false
-        },
-        methods: {
-            show: function () {
-                this.visible = true;
-            }
-        }
-    })
-</script>
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Resume</title>
+        <style type="text/css">
+            html,body,p,ul,table,tr,td{margin:0;padding:0}
+            a{text-decoration:none}
+            li{list-style:none}
+            img{border:0 none}
+            body{font-family:'Microsoft YaHei';font-size:14px}
+            div,span,a{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}
+            table{border-collapse:collapse;border-spacing:0;border:0 none;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box}
+            td{text-align:left}
+            .resume_clearfix{display:block;overflow:hidden;clear:both}
+            .all_wrap{width:693px}
+            .logo_divide{border-bottom:1px solid #b9b9b9}
+            .at{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+            .page{width:693px;margin:0 auto;padding:3px;background-color:#fff}
+            .gray{color:#919191 !important}
+            .l_green{color:#6d8194 !important}
+            .white{color:#fff !important}
+            .blue{color:#4567af !important}
+            .yellow{color:#fae001 !important}
+            .y_green{color:#516E41 !important}
+            .s_blue{color:#00a0e9 !important}
+            .orange{color:#f39800 !important}
+            .bold{font-weight:bold}
+            .indent{text-indent:24px}
+            .resume_box{border:15px solid #efefef}
+            .company{font-size:12px;font-weight:bold}
+            .information_l{width:276px;vertical-align:top;background-color:#B5CAA0}
+            .top{margin:26px 0px 18px 0px}
+            .picture{text-align:center}
+            .name{height:40px;line-height:40px;font-size:18px;color:#fff;text-align:center}
+            .posi{width:265px;line-height:14px;text-align:center;padding:0 10px}
+            .mes_l{margin-left:20px}
+            .title{height:26px;font-weight:bold;color:#d8dcde}
+            .border_b{margin-left:20px;border-bottom:1px solid #91a875}
+            .per_list{line-height:22px;font-size:12px;color:#d8dcde}
+            .title_iconl{*width:12px;padding-right:8px}
+            .title_icon1 img{margin-top:5px}
+            .b_border{border-top:1px solid #233c47}
+            .dir{vertical-align:top}
+            .limit1{width:180px}
+            .wid{width:225px}
+            .limit2{width:204px}
+            .con{position:relative;width:176px;height:16px;*height:15px;top:2px;border:1px solid #EDF0CA}
+            .rank{position:absolute;top:0;left:0;width:70%;height:16px;line-height:16px;text-indent:6px;top:0px;left:0px;background-color:#EDF0CA}
+            .email{max-width:146px;word-wrap:break-word}
+            .information_r{width:386px;vertical-align:top;padding-left:12px;background-color:#efefef}
+            .mes_r{margin-left:26px;padding:10px 0 16px 0}
+            .title_icon{*width:17px;padding-right:8px;border:0 none}
+            .title_icon img{margin-top:5px}
+            .title_txt{width:340px;height:28px;line-height:28px;font-weight:bold;color:#2d4e5c;text-align:left;border-bottom:1px solid #96a6ad}
+            .title_txt1{width:235px;height:27px;line-height:27px;font-weight:bold;color:#d8dcde;text-align:left}
+            .mes_boxl{margin:10px 0 22px 0}
+            .mes_detail{margin:10px 0px 16px 0px}
+            .mes_detail_a{margin-bottom:10px}
+            .mes_r .info_list{line-height:22px;font-size:12px;color:#000;overflow:hidden}
+            .mes_r .limit{width:290px}
+            .mes_r .edu{width:42px;vertical-align:top}
+            .mes_r .edu_a{width:100px;vertical-align:top}
+            .mes_r .reu{max-width:144px;vertical-align:top}
+            .mes_r .reu_a{max-width:190px;vertical-align:top;padding-right:20px}
+            .mes_r .in{line-height:22px;font-size:12px;color:#919191}
+            .mes_r .exp{width:180px}
+            .mes_r .pofi{width:106px;text-align:right;vertical-align:top}
+            .mes_r .edu1{width:206px;margin-right:20px}
+            .mes_r .edu2{width:220px;padding-right:20px}
+            .mes_r .edu2 span{display:block;width:220px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+            .title_txt_b{width:340px;height:28px;line-height:28px;font-weight:bold;color:#516E41;text-align:left;border-bottom:1px solid #a2b68c}
+            .mes_l .mer_right{line-height:22px;font-size:12px;color:#919191;padding-left:25px;}
+        </style>
+    </head>
+    <body>
+        <div class="page"><div class="all_wrap"><table class="resume_box"><tbody><tr>
+            <td class="information_l">
+                <div class="top">
+                    <p class="picture"><img src="static/images/avatar.jpg" alt="简历照片" width="105" height="148"></p>
+                    <p class="name bold">崔 鸿</p>
+                    <p class="posi bold y_green"><span>web前端开发员</span></p>
+                </div>
+                <table class="border_b"><tbody><tr class="title">
+                    <td class="title_iconl" valign="middle"><img src="static/images/icon7_type1.png" width="12" height="13"></td>
+                    <td class="wid white"><span>个人信息</span></td>
+                </tr></tbody></table>
+                <div class="mes_boxl">
+                    <table class="mes_l"><tbody><tr class="per_list">
+                        <td class="dir white"><span>工作经验：</span></td>
+                        <td class="limit1 y_green"><span>无经验</span></td>
+                    </tr></tbody></table>
+                    <table class="mes_l"><tbody>
+                        <tr class="per_list">
+                            <td class="white"><span>性别：</span></td>
+                            <td class="y_green"><span>男</span></td>
+                        </tr>
+                        <tr class="per_list">
+                            <td class="white"><span>年龄：</span></td>
+                            <td class="y_green"><span>26岁</span></td>
+                        </tr>
+                    </tbody></table>
+                    <table class="mes_l"><tbody><tr class="per_list">
+                        <td class="dir white"><span>居住地：</span></td>
+                        <td class="limit1 y_green"><span>北京</span></td>
+                    </tr></tbody></table>
+                    <table class="mes_l"><tbody><tr class="per_list">
+                        <td class="dir white"><span>电话：</span></td>
+                        <td class="limit2 y_green"><span>132 6906 3052</span></td>
+                    </tr></tbody></table>
+                    <table class="mes_l"><tbody><tr class="per_list">
+                        <td class="dir white"><span>E-mail：</span></td>
+                        <td class="email y_green"><span>calberoc@foxmail.com</span></td>
+                    </tr></tbody></table>
+                </div>
+                <table class="border_b"><tbody><tr class="title">
+                    <td class="title_iconl" valign="middle"><img src="static/images/icon8_type1.png" width="12" height="13"></td>
+                    <td class="wid white"><span>求职意向</span></td>
+                </tr></tbody></table>
+                <div class="mes_boxl"><table class="mes_l"><tbody>
+                    <tr class="per_list">
+                        <td class="dir white"><span>到岗时间：</span></td>
+                        <td class="limit1 y_green"><span>可随时到岗</span></td>
+                    </tr>
+                    <tr class="per_list">
+                        <td class="dir white"><span>工作性质：</span></td>
+                        <td class="limit1 y_green"><span>全职</span></td>
+                    </tr>
+                    <tr class="per_list">
+                        <td class="dir white"><span>希望行业：</span></td>
+                        <td class="limit1 y_green"><span>互联网/计算机软件/游戏</span></td>
+                    </tr>
+                    <tr class="per_list">
+                        <td class="dir white"><span>目标地点：</span></td>
+                        <td class="limit1 y_green"><span>北京</span></td>
+                    </tr>
+                    <tr class="per_list">
+                        <td class="dir white"><span>期望月薪：</span></td>
+                        <td class="limit1 y_green"><span>面议/月</span></td>
+                    </tr>
+                    <tr class="per_list">
+                        <td class="dir white"><span>目标职能：</span></td>
+                        <td class="limit1 y_green"><span>web前端开发</span></td>
+                    </tr>
+                </tbody></table></div>
+                <table class="border_b"><tbody><tr class="title">
+                    <td class="title_iconl" valign="middle"><img src="static/images/icon9_type1.png" width="12" height="13"></td>
+                    <td class="wid white"><span>语言能力</span></td>
+                </tr></tbody></table>
+                <div class="mes_boxl"><table class="mes_l"><tbody>
+                    <tr class="per_list">
+                        <td class="dir white"><span>英语：</span></td>
+                        <td class="limit2"><p class="con"><span class="rank"><span class="y_green">熟练</span></span></p></td>
+                    </tr>
+                    <tr class="per_list">
+                        <td class="dir white"><span>听说：</span></td>
+                        <td class="limit2"><p class="con"><span class="rank"><span class="y_green">熟练</span></span></p></td>
+                    </tr>
+                    <tr class="per_list">
+                        <td class="dir white"><span>读写：</span></td>
+                        <td class="limit2"><p class="con"><span class="rank"><span class="y_green">熟练</span></span></p></td>
+                    </tr>
+                </tbody></table></div>
+            </td>
+            <td class="information_r">
+                <table class="per_title"><tbody><tr>
+                    <td class="title_icon" valign="middle"><img src="static/images/icon2_type2.png" alt="教育背景" width="17" height="16"></td>
+                    <td width="340"><p class="title_txt_b">教育背景</p></td>
+                </tr></tbody></table>
+                <div class="mes_r">
+                    <table><tbody>
+                        <tr class="info_list">
+                            <td class="edu"><span>学校：</span></td>
+                            <td class="edu_a"><span class="gray">浙江大学</span></td>
+                            <td class="edu"><span>学历：</span></td>
+                            <td class="reu"><span class="gray">本科</span></td>
+                        </tr>
+                    </tbody></table>
+                    <table><tbody>
+                        <tr class="info_list">
+                            <td class="edu"><span>院系：</span></td>
+                            <td class="edu_a"><span class="gray">计算机学院</span></td>
+                            <td class="edu"><span>专业：</span></td>
+                            <td class="reu"><span class="gray">数字媒体与网络技术</span></td>
+                        </tr>
+                    </tbody></table>
+                    <table><tbody>
+                        <tr class="info_list">
+                            <td class="edu"><span>毕业：</span></td>
+                            <td class="limit"><span class="gray">2014年6月</span></td>
+                        </tr>
+                    </tbody></table>
+                    <table><tbody>
+                        <tr class="info_list">
+                            <td><span>专业能力：</span></td>
+                        </tr>
+                        <tr class="in indent">
+                            <td>本专业主要培养计算机动画、游戏和互联网应用等数字媒体的设计、开发与制作能力，强调“技艺双修”，在计算机、媒体、网络交叉领域发光发热。</td>
+                        </tr>
+                        <tr class="in indent">
+                            <td>大学期间参与过一些动画、视频、游戏、网站等的设计和制作，毕业设计是一篇关于实现铅笔画素描风格自动生成的论文。</td>
+                        </tr>
+                    </tbody></table>
+                </div>
+                <table class="per_title"><tbody><tr>
+                    <td class="title_icon" valign="middle"><img src="static/images/icon4_type2.png" alt="工作经验" width="17" height="16"></td>
+                    <td width="340"><p class="title_txt_b">工作经验</p></td>
+                </tr></tbody></table>
+                <div class="mes_r">
+                    <table><tbody>
+                        <tr class="info_list">
+                            <td class="edu"><span>公司：</span></td>
+                            <td class="exp"><span class="gray">浙江省成功软件开发有限公司</span></td>
+                        </tr>
+                    </tbody></table>
+                    <table><tbody>
+                        <tr class="info_list">
+                            <td class="edu"><span>职位：</span></td>
+                            <td class="edu_a"><span class="gray">产品经理</span></td>
+                            <td class="edu"><span>时间：</span></td>
+                            <td class="reu"><span class="gray">2014/7--2015/7</span></td>
+                        </tr>
+                    </tbody></table>
+                    <table><tbody>
+                        <tr class="info_list">
+                            <td class="edu"><span>部门：</span></td>
+                            <td class="edu_a"><span class="gray">创意设计部</span></td>
+                            <td class="edu"><span>行业：</span></td>
+                            <td class="reu"><span class="gray">计算机软件</span></td>
+                        </tr>
+                    </tbody></table>
+                    <table><tbody>
+                        <tr class="info_list">
+                            <td><span>工作内容：</span></td>
+                        </tr>
+                        <tr class="in indent">
+                            <td>1、制作售前方案的演示文档，并根据客户需求和公司技术体系制作相应的技术方案；2、制作项目招投标阶段的标书和演示文档；3、参与研发阶段的需求分析、用户调研和功能设计等。</td>
+                        </tr>
+                        <tr class="in indent">
+                            <td>工作期间参与了一大批软件研发项目的顶层设计、初期策划、招投标、用户调研和功能设计等工作，制作编写了大量的设计文档、投标文件和演示文档，积累了不少经验。</td>
+                        </tr>
+                    </tbody></table>
+                    <table><tbody><tr><td height="20"></td></tr></tbody></table>
+                </div>
+                <table class="per_title"><tbody><tr>
+                    <td class="title_icon" valign="middle"><img src="static/images/icon3_type2.png" alt="职业技能" width="17" height="16"></td>
+                    <td width="340"><p class="title_txt_b">职业技能</p></td>
+                </tr></tbody></table>
+                <div class="mes_r">
+                    <p class="in">1、熟悉Windows系统操作，能熟练操作Word、PowerPoint、Excel、Visio等办公软件；2、有一定的英语阅读能力，大学时研修大量计算机基础课程，有一定的程序设计基础和逻辑思维能力；3、对C、SQL、Python、Ruby等后端语言有一定了解，能操作Linux系统；4、熟悉HTML、CSS、JavaScript(ES6)等前端语言，熟悉Vue.js框架；5、工作认真细心，热爱学习，有责任感，时间观念强，对于按时完成工作有一定的执念。</p>
+                </div>
+                <table class="per_title"><tbody><tr>
+                    <td class="title_icon" valign="middle"><img src="static/images/icon1_type2.png" alt="其他信息" width="17" height="16"></td>
+                    <td width="340"><p class="title_txt_b">其他信息</p></td>
+                </tr></tbody></table>
+                <div class="mes_r">
+                    <p class="in">Demo网站：<a class="blue" href="https://kousai.github.io/amazeinn" target="_blank">https://kousai.github.io/amazeinn</a></p>
+                    <p class="in">备注：不支持IE浏览器。开发时采用了前后端分离的方式：后端使用Ruby和Sinatra编写，提供RESTful API；前端使用Vue.js + webpack + PWA开发。所有的代码可以到如下网址查看：</p>
+                    <p class="in indent"><a class="blue" href="https://github.com/kousai?tab=repositories" target="_blank">https://github.com/kousai?tab=repositories</a></p>
+                </div>
+            </td>
+        </tr></tbody></table></div></div>
+    </body>
 </html>
