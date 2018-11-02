@@ -38,12 +38,13 @@
             .information_l{width:276px;vertical-align:top;background-color:#B5CAA0}
             .top{margin:26px 0px 18px 0px}
             .picture{text-align:center}
-            .name{height:40px;line-height:40px;font-size:18px;color:#fff;text-align:center}
+            .name{height:40px;line-height:40px;font-size:28px;color:#fff;text-align:center;padding-left:2em}
             .posi{width:265px;line-height:14px;text-align:center;padding:0 10px}
             .mes_l{margin-left:20px}
             .title{height:26px;font-weight:bold;color:#d8dcde}
             .border_b{margin-left:20px;border-bottom:1px solid #91a875}
-            .per_list{line-height:22px;font-size:12px;color:#d8dcde}
+            .per_list{line-height:22px;font-size:12px;padding-right:20px;color:#d8dcde}
+            .intro{line-height:22px;font-size:11px;color:#d8dcde}
             .title_iconl{*width:12px;padding-right:8px}
             .title_icon1 img{margin-top:5px}
             .b_border{border-top:1px solid #233c47}
@@ -81,14 +82,11 @@
     </head>
     <body>
         <div id="app">
-            <i-button @click="show">Click me!</i-button>
-            <Modal v-model="visible" title="Welcome">Welcome to iView</Modal>
             <div class="page"><div class="all_wrap"><table class="resume_box"><tbody><tr>
                     <td class="information_l">
                         <div class="top">
-                            <p class="picture"><img src="static/images/avatar.jpg" alt="简历照片" width="105" height="148"></p>
-                            <p class="name bold">崔 鸿</p>
-                            <p class="posi bold y_green"><span>web前端开发员</span></p>
+                            <span class="name">崔 鸿</span>
+                            <span class="posi y_green">web前端开发员</span>
                         </div>
                         <table class="border_b"><tbody><tr class="title">
                             <td class="title_iconl" valign="middle"><img src="static/images/icon7_type1.png" width="12" height="13"></td>
@@ -123,7 +121,7 @@
                             </tr></tbody></table>
                         </div>
                         <table class="border_b"><tbody><tr class="title">
-                            <td class="title_iconl" valign="middle"><img src="static/images/icon8_type1.png" width="12" height="13"></td>
+                            <td class="title_iconl" valign="middle"><img src="static/images/icon9_type1.png" width="12" height="13"></td>
                             <td class="wid white"><span>求职意向</span></td>
                         </tr></tbody></table>
                         <div class="mes_boxl"><table class="mes_l"><tbody>
@@ -153,23 +151,36 @@
                             </tr>
                         </tbody></table></div>
                         <table class="border_b"><tbody><tr class="title">
-                            <td class="title_iconl" valign="middle"><img src="static/images/icon9_type1.png" width="12" height="13"></td>
-                            <td class="wid white"><span>语言能力</span></td>
+                            <td class="title_iconl" valign="middle"><img src="static/images/icon8_type1.png" width="12" height="13"></td>
+                            <td class="wid white"><span>项目经历</span></td>
                         </tr></tbody></table>
-                        <div class="mes_boxl"><table class="mes_l"><tbody>
-                            <tr class="per_list">
-                                <td class="dir white"><span>英语：</span></td>
-                                <td class="limit2"><p class="con"><span class="rank"><span class="y_green">熟练</span></span></p></td>
-                            </tr>
-                            <tr class="per_list">
-                                <td class="dir white"><span>听说：</span></td>
-                                <td class="limit2"><p class="con"><span class="rank"><span class="y_green">熟练</span></span></p></td>
-                            </tr>
-                            <tr class="per_list">
-                                <td class="dir white"><span>读写：</span></td>
-                                <td class="limit2"><p class="con"><span class="rank"><span class="y_green">熟练</span></span></p></td>
-                            </tr>
-                        </tbody></table></div>
+                        <div class="mes_boxl">
+                            <table class="mes_l"><tbody>
+                                <tr class="per_list">
+                                    <td class="dir white bold"><span>项目一：</span></td>
+                                    <td class="limit1 y_green bold"><span>迷情客栈（AMazeInn）</span></td>
+                                </tr>
+                            </tbody></table>
+                            <table class="mes_l"><tbody>
+                                <tr class="intro">
+                                    <td class="dir white bold"><span>地址：</span></td>
+                                    <td class="limit1 y_green"><a class="blue" href="https://kousai.github.io/amazeinn" target="_blank">https://kousai.github.io/amazeinn</a></td>
+                                </tr>
+                            </tbody></table>
+                            <p class="mes_l per_list y_green"><span class="bold">介绍</span>： 这是一个社交与游戏相结合的虚拟客栈网站。你可以注册一个自己的虚拟房间，可以装扮自己的房间，也可以参观别人的房间，和来自未知领域的不同住户在迷雾编织的迷宫里愉悦地相互探索。开发时采用了前后端分离的方式：后端使用Ruby和Sinatra编写，提供RESTful API；前端使用Vue.js和webpack开发。所有的代码可以到如下网址查看：
+                            <a class="blue" href="https://github.com/kousai?tab=repositories" target="_blank">https://github.com/kousai?tab=repositories</a></p>
+                            <table class="mes_l"><tbody><tr class="per_list">
+                                <td class="dir white bold"><span>项目二：</span></td>
+                                <td class="limit1 y_green bold"><span>渐变配色推荐</span></td>
+                            </tr></tbody></table>
+                            <table class="mes_l"><tbody>
+                                <tr class="intro">
+                                    <td class="dir white bold"><span>地址：</span></td>
+                                    <td class="limit1 y_green"><a class="blue" href="http://www.wanjuduoduo.com" target="_blank">http://www.wanjuduoduo.com</a></td>
+                                </tr>
+                            </tbody></table>
+                            <p class="mes_l per_list y_green"><span class="bold">介绍</span>： 这是一个专为设计师提供的渐变配色网站，提供两种或多种颜色不同角度的优雅渐变效果，可直接复制CSS代码。和同伴一起开发，我主要完成前端展现部分，技术栈使用Vue.js、jQuery和element-ui。</p>
+                        </div>
                     </td>
                     <td class="information_r">
                         <table class="per_title"><tbody><tr>
@@ -195,7 +206,7 @@
                             </tbody></table>
                             <table><tbody>
                                 <tr class="info_list">
-                                    <td class="edu"><span>毕业：</span></td>
+                                    <td class="edu"><span>毕业：</span>
                                     <td class="limit"><span class="gray">2014年6月</span></td>
                                 </tr>
                             </tbody></table>
@@ -207,7 +218,7 @@
                                     <td>本专业主要培养计算机动画、游戏和互联网应用等数字媒体的设计、开发与制作能力，强调“技艺双修”，在计算机、媒体、网络交叉领域发光发热。</td>
                                 </tr>
                                 <tr class="in indent">
-                                    <td>大学期间参与过一些动画、视频、游戏、网站等的设计和制作，毕业设计是一篇关于实现铅笔画素描风格自动生成的论文。</td>
+                                    <td>在大学期间参与过一些3D动画、视频、游戏、网站等的设计和制作，毕业设计是一篇关于实现铅笔画素描风格自动生成的论文。</td>
                                 </tr>
                             </tbody></table>
                         </div>
@@ -243,10 +254,16 @@
                                     <td><span>工作内容：</span></td>
                                 </tr>
                                 <tr class="in indent">
-                                    <td>1、制作售前方案的演示文档，并根据客户需求和公司技术体系制作相应的技术方案；2、制作项目招投标阶段的标书和演示文档；3、参与研发阶段的需求分析、用户调研和功能设计等。</td>
+                                    <td>1、制作售前方案的演示文档，并根据客户需求和公司技术体系制作相应的技术方案；</td>
                                 </tr>
                                 <tr class="in indent">
-                                    <td>工作期间参与了一大批软件研发项目的顶层设计、初期策划、招投标、用户调研和功能设计等工作，制作编写了大量的设计文档、投标文件和演示文档，积累了不少经验。</td>
+                                    <td>2、制作项目招投标阶段的标书和演示文档；</td>
+                                </tr>
+                                <tr class="in indent">
+                                    <td>3、参与项目研发阶段的需求分析、用户调研和功能设计等。</td>
+                                </tr>
+                                <tr class="in indent">
+                                    <td>工作期间参与了一大批软件研发项目的顶层设计、初期策划、招投标、用户调研和功能设计等工作，制作编写了大量的设计文档、投标文件和演示文档，积累了不少经验，文档编写能力以及紧急情况下的文档产出能力令老板和同事称奇。</td>
                                 </tr>
                             </tbody></table>
                             <table><tbody><tr><td height="20"></td></tr></tbody></table>
@@ -256,16 +273,11 @@
                             <td width="340"><p class="title_txt_b">职业技能</p></td>
                         </tr></tbody></table>
                         <div class="mes_r">
-                            <p class="in">1、熟悉Windows系统操作，能熟练操作Word、PowerPoint、Excel、Visio等办公软件；2、有一定的英语阅读能力，大学时研修大量计算机基础课程，有一定的程序设计基础和逻辑思维能力；3、对C、SQL、Python、Ruby等后端语言有一定了解，能操作Linux系统；4、熟悉HTML、CSS、JavaScript(ES6)等前端语言，熟悉Vue.js框架；5、工作认真细心，热爱学习，有责任感，时间观念强，对于按时完成工作有一定的执念。</p>
-                        </div>
-                        <table class="per_title"><tbody><tr>
-                            <td class="title_icon" valign="middle"><img src="static/images/icon1_type2.png" alt="其他信息" width="17" height="16"></td>
-                            <td width="340"><p class="title_txt_b">其他信息</p></td>
-                        </tr></tbody></table>
-                        <div class="mes_r">
-                            <p class="in">Demo网站：<a class="blue" href="https://kousai.github.io/amazeinn" target="_blank">https://kousai.github.io/amazeinn</a></p>
-                            <p class="in">备注：不支持IE浏览器。开发时采用了前后端分离的方式：后端使用Ruby和Sinatra编写，提供RESTful API；前端使用Vue.js + webpack + PWA开发。所有的代码可以到如下网址查看：</p>
-                            <p class="in indent"><a class="blue" href="https://github.com/kousai?tab=repositories" target="_blank">https://github.com/kousai?tab=repositories</a></p>
+                            <p class="in indent">1、熟悉Windows系统，能熟练操作Word、PowerPoint、Excel、Visio等办公软件；</p>
+                            <p class="in indent">2、有一定的英语阅读能力，大学时研修大量计算机基础课程，有一定的程序设计基础和逻辑思维能力；</p>
+                            <p class="in indent">3、对C、SQL、Python、Ruby等后端语言有一定了解，能操作Linux系统；</p>
+                            <p class="in indent">4、熟悉HTML、CSS、JavaScript等前端语言，熟悉Vue.js框架；</p>
+                            <p class="in indent">5、工作认真细心，热爱学习，有责任感，时间观念强，对于按时完成工作有一定的执念。</p>
                         </div>
                     </td>
                 </tr></tbody></table></div></div>
@@ -274,12 +286,10 @@
             new Vue({
                 el: '#app',
                 data: {
-                    visible: false
+
                 },
                 methods: {
-                    show: function () {
-                        this.visible = true
-                    }
+
                 }
             })
         </script>
